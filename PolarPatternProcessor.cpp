@@ -34,6 +34,6 @@ void PolarPatternProcessor::setProcessor(){
 // Die Summe der beiden Samples wird anschlieﬂend in dem Array output gespeichert
 void PolarPatternProcessor::process(float* rinput, float* linput, float*output, int numberOfSamples){
 	for(int i = 0; i < numberOfSamples; i++){
-		output[i] = (linput[i] + processor.processOneSample(rinput[i]));
+		output[i] = (0.5*linput[i] + 0.5*processor.processOneSample(rinput[i]));
 	}
 }
